@@ -1,0 +1,53 @@
+﻿<Window x:Class="PingServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cm="clr-namespace:System.ComponentModel;assembly=System"
+        xmlns:local="clr-namespace:PingServer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="315" Width="255">
+    <Window.Resources>
+        <cm:BackgroundWorker x:Key="backgroundWorker" WorkerSupportsCancellation="True" DoWork="backgroundWorker_DoWork"></cm:BackgroundWorker>
+        <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <TextBox Text="{Binding Path=Text,
+                                                RelativeSource={RelativeSource TemplatedParent}, 
+                                                Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"
+                                 x:Name="textSource" 
+                                 Background="Transparent" 
+                                 Panel.ZIndex="2" />
+                            <TextBox Text="{TemplateBinding Tag}" Background="{TemplateBinding Background}" Panel.ZIndex="1">
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Foreground" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" Value="">
+                                                <Setter Property="Foreground" Value="LightGray"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Label x:Name="label" Content="Resource name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.122,0.004"/>
+        <TextBox Style="{StaticResource placeHolder}" Tag="google.com" x:Name="hostname" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <ListView x:Name="ReplyList" HorizontalAlignment="Left" Height="200" Margin="10,69,0,0" VerticalAlignment="Top" Width="230">
+            
+        </ListView>
+        <Button x:Name="start" Content="Start" HorizontalAlignment="Left" Margin="135,41,0,0" VerticalAlignment="Top" Width="50" Height="24" Click="start_Click"/>
+        <Button x:Name="stop" Content="Stop" HorizontalAlignment="Left" Margin="190,41,0,0" VerticalAlignment="Top" Width="50" Height="24" Click="stop_Click"/>
+
+    </Grid>
+    
+</Window>

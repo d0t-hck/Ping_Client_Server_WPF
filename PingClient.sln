@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingClient", "PingClient\PingClient.csproj", "{49C708E7-C960-4370-8941-ABE0EAE8A1A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingServer", "PingServer\PingServer.csproj", "{02CCFEB9-1298-4670-9BC3-35A8C8875B4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49C708E7-C960-4370-8941-ABE0EAE8A1A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49C708E7-C960-4370-8941-ABE0EAE8A1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49C708E7-C960-4370-8941-ABE0EAE8A1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49C708E7-C960-4370-8941-ABE0EAE8A1A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02CCFEB9-1298-4670-9BC3-35A8C8875B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02CCFEB9-1298-4670-9BC3-35A8C8875B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02CCFEB9-1298-4670-9BC3-35A8C8875B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02CCFEB9-1298-4670-9BC3-35A8C8875B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A17F3FA-3E3A-4C8B-AB2A-D79C45177329}
+	EndGlobalSection
+EndGlobal
